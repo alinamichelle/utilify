@@ -1,0 +1,207 @@
+[dotenv] Set [36mNOMINATIM_USER_AGENT[0m and [36mNOMINATIM_EMAIL[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (115.7ms)[0m  [1m[35mCREATE DATABASE "backend_development" ENCODING = 'unicode'[0m
+  [1m[35m (45.2ms)[0m  [1m[35mCREATE DATABASE "backend_test" ENCODING = 'unicode'[0m
+[dotenv] Set [36mNOMINATIM_USER_AGENT[0m and [36mNOMINATIM_EMAIL[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (8.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5073945470573576205)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2025-08-25 20:18:59.567107', '2025-08-25 20:18:59.567108') RETURNING "key"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5073945470573576205)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+[dotenv] Set [36mNOMINATIM_USER_AGENT[0m and [36mNOMINATIM_EMAIL[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/api/v1/providers?address=301+W+2nd+St%2C+Austin%2C+TX+78701" for ::1 at 2025-08-25 15:25:13 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (43.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::ProvidersController#index as JSON
+  Parameters: {"address"=>"301 W 2nd St, Austin, TX 78701"}
+Completed 500 Internal Server Error in 3325ms (ActiveRecord: 0.0ms | Allocations: 6036)
+
+
+  
+NoMethodError (undefined method `new' for Oj:Module):
+  
+app/services/providers/austin_energy.rb:21:in `lookup'
+app/controllers/api/v1/providers_controller.rb:23:in `index'
+[dotenv] Set [36mNOMINATIM_USER_AGENT[0m and [36mNOMINATIM_EMAIL[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/api/v1/providers?address=301+w+2nd+st+austin+tx+78701" for ::1 at 2025-08-25 15:27:31 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::ProvidersController#index as JSON
+  Parameters: {"address"=>"301 w 2nd st austin tx 78701"}
+Completed 200 OK in 5313ms (Views: 0.7ms | ActiveRecord: 0.0ms | Allocations: 10030)
+
+
+[dotenv] Set [36mNOMINATIM_USER_AGENT[0m and [36mNOMINATIM_EMAIL[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/api/v1/providers?address=301%20W%202nd%20St,%20Austin,%20TX%2078701" for ::1 at 2025-08-25 15:39:08 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::ProvidersController#index as */*
+  Parameters: {"address"=>"301 W 2nd St, Austin, TX 78701"}
+Completed 200 OK in 5262ms (Views: 0.7ms | ActiveRecord: 0.0ms | Allocations: 9367)
+
+
+Started GET "/api/v1/providers?address=7019+Creighton+LN%2C+Austin%2C+TX+78723" for ::1 at 2025-08-25 15:39:50 -0500
+Processing by Api::V1::ProvidersController#index as JSON
+  Parameters: {"address"=>"7019 Creighton LN, Austin, TX 78723"}
+Completed 200 OK in 2136ms (Views: 0.9ms | ActiveRecord: 0.0ms | Allocations: 6038)
+
+
+Started GET "/api/v1/providers?address=301%20W%202nd%20St,%20Austin,%20TX%2078701" for ::1 at 2025-08-25 15:42:40 -0500
+Processing by Api::V1::ProvidersController#index as */*
+  Parameters: {"address"=>"301 W 2nd St, Austin, TX 78701"}
+Completed 200 OK in 5006ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 5214)
+
+
+Started GET "/api/v1/providers?address=301%20W%202nd%20St,%20Austin,%20TX%2078701" for ::1 at 2025-08-25 15:42:53 -0500
+Processing by Api::V1::ProvidersController#index as */*
+  Parameters: {"address"=>"301 W 2nd St, Austin, TX 78701"}
+Completed 200 OK in 3591ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 5203)
+
+
+Started GET "/api/v1/providers?address=4916+Sapri+PATH%2C+Leander%2C+TX+78641" for ::1 at 2025-08-25 15:45:40 -0500
+Processing by Api::V1::ProvidersController#index as JSON
+  Parameters: {"address"=>"4916 Sapri PATH, Leander, TX 78641"}
+Completed 200 OK in 2553ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 7463)
+
+
+Started GET "/api/v1/providers?address=7019%20Creighton%20LN,%20Austin,%20TX%2078723" for ::1 at 2025-08-25 15:46:32 -0500
+Processing by Api::V1::ProvidersController#index as */*
+  Parameters: {"address"=>"7019 Creighton LN, Austin, TX 78723"}
+Completed 200 OK in 2007ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 5198)
+
+
+Started GET "/api/v1/providers?address=301%20W%202nd%20St,%20Austin,%20TX%2078701" for ::1 at 2025-08-25 15:46:48 -0500
+Processing by Api::V1::ProvidersController#index as */*
+  Parameters: {"address"=>"301 W 2nd St, Austin, TX 78701"}
+Completed 200 OK in 3905ms (Views: 0.7ms | ActiveRecord: 0.0ms | Allocations: 5197)
+
+
+Started GET "/api/v1/providers?address=2209+Big+Hollow+DR%2C+Austin%2C+TX+78728" for ::1 at 2025-08-25 15:47:39 -0500
+Processing by Api::V1::ProvidersController#index as JSON
+  Parameters: {"address"=>"2209 Big Hollow DR, Austin, TX 78728"}
+Completed 422 Unprocessable Content in 2059ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 922)
+
+
+Started GET "/api/v1/providers?address=2209+Big+Hollow+dr+Austin+TX+78728" for ::1 at 2025-08-25 15:47:54 -0500
+Processing by Api::V1::ProvidersController#index as JSON
+  Parameters: {"address"=>"2209 Big Hollow dr Austin TX 78728"}
+Completed 422 Unprocessable Content in 1866ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 906)
+
+
+Started GET "/api/v1/providers?address=13206+Woodthorpe+ST%2C+Austin%2C+TX+78729" for ::1 at 2025-08-25 15:48:44 -0500
+Processing by Api::V1::ProvidersController#index as JSON
+  Parameters: {"address"=>"13206 Woodthorpe ST, Austin, TX 78729"}
+Completed 422 Unprocessable Content in 1502ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 906)
+
+
+Started GET "/api/v1/providers?address=1115+Town+Creek+Dr" for ::1 at 2025-08-25 15:49:26 -0500
+Processing by Api::V1::ProvidersController#index as JSON
+  Parameters: {"address"=>"1115 Town Creek Dr"}
+Completed 200 OK in 2450ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 5196)
+
+
+Started GET "/api/v1/providers?address=2209+big+hollow+dr" for ::1 at 2025-08-25 15:49:50 -0500
+Processing by Api::V1::ProvidersController#index as JSON
+  Parameters: {"address"=>"2209 big hollow dr"}
+Completed 200 OK in 2043ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 5187)
+
+
+Started GET "/api/v1/providers?address=301%20W%202nd%20St,%20Austin,%20TX%2078701" for ::1 at 2025-08-25 15:55:49 -0500
+Processing by Api::V1::ProvidersController#index as */*
+  Parameters: {"address"=>"301 W 2nd St, Austin, TX 78701"}
+Completed 200 OK in 3762ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 7549)
+
+
+Started GET "/api/v1/providers?address=301%20W%202nd%20St,%20Austin,%20TX%2078701" for ::1 at 2025-08-25 15:56:04 -0500
+Processing by Api::V1::ProvidersController#index as */*
+  Parameters: {"address"=>"301 W 2nd St, Austin, TX 78701"}
+Completed 200 OK in 3752ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 5335)
+
+
+Started GET "/api/v1/providers?address=2209+big+hollow+dr" for ::1 at 2025-08-25 15:56:17 -0500
+Processing by Api::V1::ProvidersController#index as JSON
+  Parameters: {"address"=>"2209 big hollow dr"}
+Completed 200 OK in 1837ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 5315)
+
+
+Started GET "/api/v1/providers?address=1812+dexter+st" for ::1 at 2025-08-25 16:53:45 -0500
+Processing by Api::V1::ProvidersController#index as JSON
+  Parameters: {"address"=>"1812 dexter st"}
+Completed 200 OK in 3143ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 7570)
+
+
+[dotenv] Set [36mNOMINATIM_USER_AGENT[0m and [36mNOMINATIM_EMAIL[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/api/v1/providers?address=204+Matthew+cv" for ::1 at 2025-08-25 16:54:44 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::ProvidersController#index as JSON
+  Parameters: {"address"=>"204 Matthew cv"}
+Completed 200 OK in 2475ms (Views: 0.7ms | ActiveRecord: 0.0ms | Allocations: 11160)
+
+
+Started GET "/api/v1/providers?address=301%20W%202nd%20St,%20Austin,%20TX%2078701" for ::1 at 2025-08-25 16:54:53 -0500
+Processing by Api::V1::ProvidersController#index as */*
+  Parameters: {"address"=>"301 W 2nd St, Austin, TX 78701"}
+Completed 200 OK in 3704ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 5542)
+
+
+Started GET "/api/v1/providers?address=204+Matthew+cv+bastrop" for ::1 at 2025-08-25 16:54:59 -0500
+Processing by Api::V1::ProvidersController#index as JSON
+  Parameters: {"address"=>"204 Matthew cv bastrop"}
+Completed 200 OK in 2208ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 6775)
+
+
+Started GET "/api/v1/providers?address=301%20W%202nd%20St,%20Austin,%20TX%2078701" for ::1 at 2025-08-25 16:55:11 -0500
+Processing by Api::V1::ProvidersController#index as */*
+  Parameters: {"address"=>"301 W 2nd St, Austin, TX 78701"}
+Completed 200 OK in 3496ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 5515)
+
+
+Started GET "/api/v1/providers?address=301%20W%202nd%20St,%20Austin,%20TX%2078701" for ::1 at 2025-08-25 16:55:15 -0500
+Processing by Api::V1::ProvidersController#index as */*
+  Parameters: {"address"=>"301 W 2nd St, Austin, TX 78701"}
+Completed 200 OK in 3577ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 5517)
+
+
+Started GET "/api/v1/providers?address=7019%20Creighton%20LN,%20Austin,%20TX%2078723" for ::1 at 2025-08-25 16:55:30 -0500
+Processing by Api::V1::ProvidersController#index as */*
+  Parameters: {"address"=>"7019 Creighton LN, Austin, TX 78723"}
+Completed 200 OK in 2088ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 5503)
+
+
+Started GET "/api/v1/providers?address=1812+dexter+st" for ::1 at 2025-08-25 16:55:55 -0500
+Processing by Api::V1::ProvidersController#index as JSON
+  Parameters: {"address"=>"1812 dexter st"}
+Completed 200 OK in 2620ms (Views: 0.7ms | ActiveRecord: 0.0ms | Allocations: 5505)
+
+
+Started GET "/" for ::1 at 2025-08-25 17:07:40 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/alinavillarreal/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/railties-7.1.5.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/alinavillarreal/.rbenv/versions/3.2.5/lib/ruby/gems/3.2.0/gems/railties-7.1.5.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.4ms | Allocations: 374)
+Completed 200 OK in 15ms (Views: 3.9ms | ActiveRecord: 0.0ms | Allocations: 6441)
+
+
+Started GET "/api/v1/providers?address=1812+dexter" for ::1 at 2025-08-25 17:08:22 -0500
+Processing by Api::V1::ProvidersController#index as JSON
+  Parameters: {"address"=>"1812 dexter"}
+Gas LDC retry 1/2 after Failed to open TCP connection to maps.nccs.nasa.gov:443 (execution expired), sleeping 2.073986441726298s
+Completed 200 OK in 11569ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 6019)
+
+
+Started GET "/api/v1/providers?address=1812+dexter+st" for ::1 at 2025-08-25 17:22:44 -0500
+Processing by Api::V1::ProvidersController#index as JSON
+  Parameters: {"address"=>"1812 dexter st"}
+Completed 200 OK in 3004ms (Views: 0.7ms | ActiveRecord: 0.0ms | Allocations: 5517)
+
+
+Started GET "/api/v1/providers?address=1812+dexter+st" for ::1 at 2025-08-25 17:28:14 -0500
+Processing by Api::V1::ProvidersController#index as JSON
+  Parameters: {"address"=>"1812 dexter st"}
+Completed 200 OK in 2741ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 5499)
+
+

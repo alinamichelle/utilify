@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir:*)",
+      "Bash(chmod:*)",
+      "Bash(rails new:*)",
+      "Bash(bundle install:*)",
+      "Bash(rails generate:*)",
+      "Bash(npx create-next-app:*)",
+      "Bash(bin/rails:*)",
+      "Bash(npm run dev:*)",
+      "Bash(lsof:*)",
+      "Bash(kill:*)",
+      "Bash(curl:*)",
+      "Bash(bundle exec rspec:*)",
+      "Bash(time curl:*)",
+      "Bash(/dev/null)",
+      "Bash(npm install:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

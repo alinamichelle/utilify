@@ -1,0 +1,58 @@
+[dotenv] Set [36mNOMINATIM_USER_AGENT[0m and [36mNOMINATIM_EMAIL[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (34.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "backend_test"[0m
+  [1m[35m (113.4ms)[0m  [1m[35mCREATE DATABASE "backend_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (0)[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'test', '2025-08-25 20:42:33.844222', '2025-08-25 20:42:33.844225') RETURNING "key"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', '34f0d9df3e6593e2828215d39b5de559fd82053b', '2025-08-25 20:42:33.845278', '2025-08-25 20:42:33.845279') RETURNING "key"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+[dotenv] Saved a snapshot of [32mENV[0m
+  [1m[36mTRANSACTION (5.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/api/v1/providers?address=301+W+2nd+St%2C+Austin%2C+TX+78701" for 127.0.0.1 at 2025-08-25 15:42:33 -0500
+Processing by Api::V1::ProvidersController#index as HTML
+  Parameters: {"address"=>"301 W 2nd St, Austin, TX 78701"}
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4219)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/api/v1/providers?address=301+W+2nd+St%2C+Austin%2C+TX+78701" for 127.0.0.1 at 2025-08-25 15:42:33 -0500
+Processing by Api::V1::ProvidersController#index as HTML
+  Parameters: {"address"=>"301 W 2nd St, Austin, TX 78701"}
+Completed 200 OK in 0ms (Views: 0.0ms | ActiveRecord: 0.0ms | Allocations: 961)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+Started GET "/api/v1/providers?address=301+W+2nd+St%2C+Austin%2C+TX+78701" for 127.0.0.1 at 2025-08-25 15:42:33 -0500
+Processing by Api::V1::ProvidersController#index as HTML
+  Parameters: {"address"=>"301 W 2nd St, Austin, TX 78701"}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 960)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+Started GET "/api/v1/providers?address=301+W+2nd+St%2C+Austin%2C+TX+78701" for 127.0.0.1 at 2025-08-25 15:42:33 -0500
+Processing by Api::V1::ProvidersController#index as HTML
+  Parameters: {"address"=>"301 W 2nd St, Austin, TX 78701"}
+Completed 200 OK in 0ms (Views: 0.0ms | ActiveRecord: 0.0ms | Allocations: 960)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/api/v1/providers?address=123+Main+St%2C+Round+Rock%2C+TX" for 127.0.0.1 at 2025-08-25 15:42:33 -0500
+Processing by Api::V1::ProvidersController#index as HTML
+  Parameters: {"address"=>"123 Main St, Round Rock, TX"}
+Completed 200 OK in 0ms (Views: 0.0ms | ActiveRecord: 0.0ms | Allocations: 961)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+Started GET "/api/v1/providers" for 127.0.0.1 at 2025-08-25 15:42:33 -0500
+Processing by Api::V1::ProvidersController#index as HTML
+Completed 422 Unprocessable Content in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 89)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+Started GET "/api/v1/providers?address=invalid+address" for 127.0.0.1 at 2025-08-25 15:42:33 -0500
+Processing by Api::V1::ProvidersController#index as HTML
+  Parameters: {"address"=>"invalid address"}
+Completed 422 Unprocessable Content in 0ms (Views: 0.0ms | ActiveRecord: 0.0ms | Allocations: 290)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
